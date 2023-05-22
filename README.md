@@ -1,52 +1,34 @@
+Start project by run 
+- npm install
+- run your mongodb server
+- yarn start:dev // for watching mode
 
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-  <a href="https://mongoosejs.com/" target="blank"><img src="https://cms-assets.tutsplus.com/uploads/users/34/posts/29527/preview_image/mongoose.jpg" width="320" alt="Mongooose Logo" /></a>
+---- You will find all API's you need to create new Product, new Offer and new Basket ----
 
-</p>
-# Node-Express-Mongo-Mongoose-JWT
+Here's Some Example JSON Requests
 
-Its a Simple startup NestJS Application with Mongo and Mongoose 
+createProduct => POST /products
+{
+  "name": "red_plate";
+  "price": 50;
+  "product_code": "R01";
+}
 
-To Start with this  Nest-Mongo-Mongoose Impelemenatted Project, Please start with Following Steps
+--------------------------------------------------
 
-Note:- Before Starting with this Project, Please make sure you have installed latest stabled version of [Nodejs](https://nodejs.org/en/) and [Nestjs](https://nestjs.com/)  Application in your System 
+createOffer => POST /Offers
+{
+  "offer_type": "buy-one-get-one-half-price",
+  "discount_rate": 50,
+  "product_code": "R01"
+}
 
+And you can create Basket just by calling POST /basket
 
-## Follow the Below Steps
+# Steps-To-Test
 
+- Create Products => Then => Create offers => Then => Create Basket.
 
-Clone the project
+- Start Adding your Products to busket you created Using The basket id you created
 
-```bash
-  git clone https://github.com/iamkanishka/nestmongodbcrud.git
-```
-
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-if you feel like you need updated versions of the dependencies, then run
-```bash
-  npm update
-```
-
-
-Start the server
-
-```bash
-  npm run start
-```
-
-
-
-
-
-
+- when you are done adding products call /total Route to calculate the total price of the basket
