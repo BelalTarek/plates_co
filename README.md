@@ -31,4 +31,4 @@ And you can create Basket just by calling POST /basket
 
 - Start Adding your Products to busket you created Using The basket id you created
 
-- when you are done adding products call /total Route to calculate the total price of the basket
+- when you are done adding products call GET /basket/:id/total Route to calculate the total price of the basket
